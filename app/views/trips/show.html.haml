@@ -1,5 +1,7 @@
 %h1= @trip.name
 
+%span#trip-length= "Trip Length: #{@trip_length} miles"
+
 #trip-trails-container
   -@trip_trails.each do |trip_trail|
     %h3= trip_trail.name

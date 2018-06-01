@@ -42,6 +42,12 @@ RSpec.describe 'Trips Index Page (Visitor)' do
 
         expect(page).to have_content("Trip Length: #{@trails[0].length.to_i + @trails[2].length.to_i} miles")
       end
+
+      it 'should show average hiking distance of all trails on trip' do
+        visit trip_path(@trips[0])
+
+        expect(page).to have_content("Average Trail Length: #{@trips[0].trails.average(:length)}")
+      end
     end
   end
 end

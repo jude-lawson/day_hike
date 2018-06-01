@@ -1,6 +1,7 @@
 %h1= @trip.name
 
 %span#trip-length= "Trip Length: #{@trip_length} miles"
+%span#average-trail-length= "Average Trail Length: #{@trail_average}"
 
 #trip-trails-container
   -@trip_trails.each do |trip_trail|

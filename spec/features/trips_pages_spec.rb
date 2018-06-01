@@ -60,6 +60,16 @@ RSpec.describe 'Trips Index Page (Visitor)' do
 
         expect(page).to have_content("Shortest Hiking Distance: #{@trips[1].trails.minimum(:length)}")
       end
+
+      it 'should have trail name links that take the user to the specific trail page' do
+        visit trip_path(@trips[1])
+
+        within("#trail-#{@trails[1].id}") do
+          click_link @trails[1].name
+        end
+
+        expect(page).to have_current_path(trail_path(@trails[1]))
+      end
     end
   end
 end

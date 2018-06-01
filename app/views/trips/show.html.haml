@@ -1,9 +1,9 @@
 %h1= @trip.name
 
-%span#trip-length= "Trip Length: #{@trip_length} miles"
-%span#average-trail-length= "Average Trail Length: #{@trail_average}"
-%span#longest-distance= "Longest Hiking Distance: #{@longest_trail}"
-%span#shortest-distance= "Shortest Hiking Distance: #{@shortest_trail}"
+%span#trip-length= "Trip Length: #{@trip.total_length} miles"
+%span#average-trail-length= "Average Trail Length: #{@trip.average_trail_length}"
+%span#longest-distance= "Longest Hiking Distance: #{@trip.longest_trail}"
+%span#shortest-distance= "Shortest Hiking Distance: #{@trip.shortest_trail}"
 
 #trip-trails-container
   -@trip_trails.each do |trip_trail|

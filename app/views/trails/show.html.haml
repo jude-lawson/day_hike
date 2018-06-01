@@ -1,4 +1,7 @@
 %h1= @trail.name
 
+%span= "Total Trips With This Trail: #{@trail.total_trips}"
+
 -@trail_trips.each do |trail_trip|
   %span= trail_trip.name
+  %span= "Length: #{trail_trip.total_length}"

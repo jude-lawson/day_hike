@@ -8,6 +8,14 @@ RSpec.describe 'Trail Pages (Visitor)' do
 
         expect(page).to have_content(@trips[0].name)
         expect(page).to have_content(@trips[2].name)
+        expect(page).to have_content("Length: #{@trips[0].trails.sum(:length)}")
+        expect(page).to have_content("Length: #{@trips[2].trails.sum(:length)}")
+      end
+
+      it 'should show the total number of trips where this trail is included' do
+        visit trail_path(@trails[2])
+
+        expect(page).to have_content("Total Trips With This Trail: 2")
       end
     end
   end

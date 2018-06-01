@@ -48,6 +48,12 @@ RSpec.describe 'Trips Index Page (Visitor)' do
 
         expect(page).to have_content("Average Trail Length: #{@trips[0].trails.average(:length)}")
       end
+
+      it 'should show the longest trail' do
+        visit trip_path(@trips[0])
+
+        expect(page).to have_content("Longest Hiking Distance: #{@trips[0].trails.maximum(:length)}")
+      end
     end
   end
 end

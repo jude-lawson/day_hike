@@ -54,6 +54,12 @@ RSpec.describe 'Trips Index Page (Visitor)' do
 
         expect(page).to have_content("Longest Hiking Distance: #{@trips[0].trails.maximum(:length)}")
       end
+
+      it 'should show the shortest trail' do
+        visit trip_path(@trips[1])
+
+        expect(page).to have_content("Shortest Hiking Distance: #{@trips[1].trails.minimum(:length)}")
+      end
     end
   end
 end

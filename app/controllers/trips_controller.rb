@@ -9,5 +9,6 @@ class TripsController < ApplicationController
     @trip_length = @trip_trails.sum(:length)
     @trail_average = @trip.trails.average(:length)
     @longest_trail = @trip.trails.maximum(:length)
+    @shortest_trail = @trip.trails.minimum(:length)
   end
 end

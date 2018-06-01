@@ -1,0 +1,5 @@
+%h1 Hiking Trips
+
+-@trips.each do |trip|
+  %div{id: "trip-#{trip.id}"}
+    =link_to trip.name, trip_path(trip)
